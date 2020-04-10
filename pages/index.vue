@@ -1,27 +1,30 @@
-<template>
-  <main>
-    <h1>{{ $t('Hello') }} world! :)</h1>
-    <p>Welcome to the {{ this.$i18n.locale }} website</p>
-    <button @click="changeLocale">
-      Change locale
-    </button>
-  </main>
-</template>
-
 <script>
 export default {
-  name: 'IndexPage',
-  methods: {
-    changeLocale () {
-      if (this.$i18n.locale === 'no') {
-        this.$i18n.setLocale('se')
-      } else if (this.$i18n.locale === 'se') {
-        this.$i18n.setLocale('no')
-      }
-    }
-  }
+  name: 'IndexPage'
 }
 </script>
+
+<template>
+  <main>
+    <ul>
+      <li
+        v-for="(locale, index) in this.$i18n.locales"
+        :key="index"
+      >
+        Locale "{{ locale.code }}":
+        <a
+          :href="`/${locale.code}/`"
+          class="underline"
+        >
+          ssr</a> /
+        <nuxt-link :to="`/${locale.code}/`" class="underline">
+          client
+        </nuxt-link>
+        <span v-if="index === 0">(default locale)</span>
+      </li>
+    </ul>
+  </main>
+</template>
 
 <style>
 

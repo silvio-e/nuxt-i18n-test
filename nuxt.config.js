@@ -28,7 +28,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: './plugins/setLocale' }
+    // { src: './plugins/setLocale' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -63,20 +63,8 @@ export default {
     // vue-i18n configuration.
     // See documentation: http://kazupon.github.io/vue-i18n/api/#constructor-options
     vueI18n: {
-      fallbackLocale: 'en',
-      messages: {
-        en: {
-          Hello: 'Hello'
-        },
-        no: {
-          Hello: 'Hei'
-        },
-        se: {
-          Hello: 'Hei se'
-        }
-      }
+      fallbackLocale: 'no'
     },
-    // locales: ['no', 'se', 'en'],
     locales: [
       { code: 'no', file: 'no.js' },
       { code: 'se', file: 'se.js' },
@@ -86,7 +74,6 @@ export default {
     strategy: 'no_prefix',
     lazy: true,
     langDir: 'translations/',
-    // langDir: null,
     detectBrowserLanguage: false,
     vuex: {
       // Module namespace
@@ -101,12 +88,6 @@ export default {
       // Mutation to commit to set route parameters translations
       syncRouteParams: true
     }
-
-    // // Called right before app's locale changes
-    // beforeLanguageSwitch: (oldLocale, newLocale) => null,
-
-    // // Called after app's locale has changed
-    // onLanguageSwitched: (oldLocale, newLocale) => null
   },
   /*
   ** Build configuration

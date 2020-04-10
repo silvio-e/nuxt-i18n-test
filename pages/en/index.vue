@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'IndexSe'
+  name: 'IndexEn'
 }
 </script>
 

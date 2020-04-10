@@ -1,14 +1,12 @@
 <script>
 export default {
-  name: 'IndexNO'
+  name: 'IndexNo'
 }
 </script>
 
 <template>
   <div>
-    My locale is {{ this.$i18n.locale }}. Go to the <nuxt-link to="/se/">
-      Swedish page
-    </nuxt-link>
+    Active locale is {{ this.$i18n.locale }}.
   </div>
 </template>
 
